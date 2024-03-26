@@ -35,13 +35,17 @@ if parent_element:
             if title_element is not None:
                 title = title_element.text.strip()
 
-            # due date
-            due_date_element = item.find('div', class_='planneritem-time')
-            due_date = due_date_element.text.strip()
+                # due date
+                due_date_element = item.find('div', class_='planneritem-time')
+                due_date = due_date_element.text.strip()
 
-            # Create a dictionary to represent this assignment
-            assignment = {'planner_date': planner_date, 'title': title, 'due_date': due_date}
-            assignments.append(assignment)
+                # Create a dictionary to represent this assignment
+                assignment = {
+                    'planner_date': planner_date, 
+                    'title': title, 
+                    'due_date': due_date
+                    }
+                assignments.append(assignment)
 
     # Print info
     for assignment in assignments:
